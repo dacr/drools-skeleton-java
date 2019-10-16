@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<configuration xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+		<encoder>
+			<pattern>%d{HH:mm:ss} %-5level %logger - %msg%n</pattern>
+		</encoder>
+	</appender>
+    
+	<logger name="org.kie" level="ERROR"/>
+	<logger name="org.drools" level="ERROR"/>
+	
+	<root level="DEBUG">
+		<appender-ref ref="STDOUT" />
+	</root>
+
+</configuration>
