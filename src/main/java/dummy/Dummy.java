@@ -17,14 +17,14 @@ public class Dummy {
         KieSession ksession = kbase.newKieSession();
         try {
             ksession.setGlobal("logger", LoggerFactory.getLogger("HelloKB"));
-            ksession.insert(new Hello("world"));
+            ksession.insert(new Someone("joe"));
             ksession.fireAllRules();
             Stream<HelloResponse> messages =
                     ksession.getObjects()
                             .stream()
                             .filter(item -> item instanceof HelloResponse)
                             .map(item -> (HelloResponse)item);
-            assert(messages.filter(s -> s.getMessage().equals("Hello world")).findFirst().isPresent());
+            assert(messages.filter(s -> s.getMessage().equals("Hello joe")).findFirst().isPresent());
         } finally {
             ksession.dispose();
         }

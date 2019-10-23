@@ -2,7 +2,10 @@
 
 <kmodule xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xmlns="http://www.drools.org/xsd/kmodule">
-    <kbase name="HelloKB" packages="dummy.hello" eventProcessingMode="cloud" equalsBehavior="equality">
+    <kbase name="HelloKB"
+           packages="dummy.hello"
+           eventProcessingMode="cloud"
+           equalsBehavior="equality" >
         <ksession name="HelloKS" default="true"/>
     </kbase>
 </kmodule>

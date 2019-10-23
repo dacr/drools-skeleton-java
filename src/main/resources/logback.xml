@@ -7,8 +7,8 @@
 		</encoder>
 	</appender>
     
-	<logger name="org.kie" level="ERROR"/>
-	<logger name="org.drools" level="ERROR"/>
+	<logger name="org.kie" level="INFO"/>
+	<logger name="org.drools" level="INFO"/>
 	
 	<root level="DEBUG">
 		<appender-ref ref="STDOUT" />

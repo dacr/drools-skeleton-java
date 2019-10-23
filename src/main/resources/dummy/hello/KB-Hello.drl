@@ -1,0 +1,24 @@
+package dummy.hello
+
+import dummy.Someone
+import dummy.HelloResponse
+
+dialect "mvel"
+
+global org.slf4j.Logger logger
+
+rule "Hello"
+when
+  Someone($name:name)
+then
+  logger.info("Hello rule fired up");
+  insert(new HelloResponse("Hello "+$name));
+end
+
+rule "Hello2"
+when
+  Someone($name:name, $name.length>2)
+then
+  logger.info("Hello2");
+  insert(new HelloResponse("Hello2 "+$name))
+end
